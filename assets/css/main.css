@@ -1,7 +1,3 @@
-
-
-
-
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Nunito",  sans-serif;
@@ -2034,8 +2030,25 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-shrink: 0;
   transition: 0.3s;
+}
+
+/* Keep the blue Contact Info panel centered in the contact section
+   without changing its size or padding. The row already uses
+   Bootstrap's flex layout, so just center the flex items. */
+.contact .row.g-4.g-lg-5 {
+  justify-content: center;
+}
+
+/* Stronger fallback: center the column that contains the info-box.
+   This ensures horizontal centering even if the row's justify-content
+   is overridden by other rules. It does not change the panel size. */
+.contact .col-lg-5 {
+  margin-left: auto;
+  margin-right: auto;
+  float: none; /* override any floating if present */
 }
 
 .contact .info-item .icon-box i {
@@ -2262,11 +2275,6 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
-}
-
-
-.starter-section {
-  
 }
 
 
